@@ -1,7 +1,3 @@
-data "aws_vpc" "selected" {
-  default = true
-}
-
 
 resource "aws_instance" "web" {
   ami           = "ami-0b0ea68c435eb488d"
