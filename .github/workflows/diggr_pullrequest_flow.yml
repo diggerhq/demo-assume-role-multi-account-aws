@@ -22,12 +22,16 @@ jobs:
 
     steps:
 
-
-
       - uses: mcblair/configure-aws-profile-action@v0.1.1
         with:
           role-arn: arn:aws:iam::209539466991:role/github-oidc-connect
           profile-name: testaccount
+          region: us-east-1
+
+      - uses: mcblair/configure-aws-profile-action@v0.1.1
+        with:
+          role-arn: arn:aws:iam::682903345738:role/github-oidc-access
+          profile-name: stagingaccount
           region: us-east-1
 
       - name: digger run

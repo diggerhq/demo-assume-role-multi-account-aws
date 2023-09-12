@@ -9,6 +9,6 @@ resource "aws_instance" "web" {
   vpc_id = data.aws_vpc.id
 
   tags = {
-    Name = "test acc ec2 instance"
+    Name = "staging acc ec2 instance"
   }
 }

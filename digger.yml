@@ -1,3 +1,5 @@
 projects:
 - name: test
   dir: test-account-resource
+- name: staging
+  dir: staging-account-resource
