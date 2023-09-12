@@ -22,18 +22,16 @@ jobs:
 
     steps:
 
-      - uses: aws-actions/configure-aws-credentials@v4
-        with:   
-          aws-role-to-assume: arn:aws:iam::209539466991:role/github-oidc-connect
-          profile: testaccount
 
-      - uses: aws-actions/configure-aws-credentials@v4
-        with:   
-          aws-role-to-assume: arn:aws:iam::209539466991:role/github-oidc-connect
-          profile: stagingaccount
+
+      - uses: mcblair/configure-aws-profile-action@v0.1.1
+        with:
+          role-arn: arn:aws:iam::209539466991:role/github-oidc-connect
+          profile-name: testaccount
+          region: us-east-1
 
       - name: digger run
-        uses: diggerhq/digger@fix/error-reporting-swallowing-of-error
+        uses: diggerhq/digger@v0.1.31
         with:
           setup-aws: true
           aws-role-to-assume: arn:aws:iam::209539466991:role/github-oidc-connect

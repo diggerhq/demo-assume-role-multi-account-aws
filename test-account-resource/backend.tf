@@ -6,3 +6,7 @@ terraform {
     region = "us-east-2"
   }
 }
+
+provider "aws" {
+  profile = "testaccount"
+}
